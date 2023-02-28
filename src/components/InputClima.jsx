@@ -16,9 +16,9 @@ export function InputClima({ cambioCiudad }) {
   };
   return (
     <form className="form" onSubmit={enviarForm}>
-        <h1>Pronostico Climatico</h1>
+        
         <div className="cont">
-      <input type="text" placeholder="Ingrese La Ciudad A Buscar" onChange={CambiarCity} /></div>
+      <input type="text" name="buscar" placeholder="Ingrese La Ciudad A Buscar" onChange={CambiarCity} /></div>
      
     </form>
   );

@@ -1,44 +1,44 @@
 import React from "react";
+import { TiWeatherPartlySunny, TiWeatherWindyCloudy } from "react-icons/ti";
+import { WiHumidity } from "react-icons/wi";
+import {
+  TbTemperatureCelsius,
+  TbTemperatureFahrenheit,
+  TbTemperature,
+} from "react-icons/tb";
 
+import { GiWizardStaff } from "react-icons/gi";
 function InfoCLima({ clima }) {
   return (
     <>
       <div className="datos__clima">
-        <div>
-          <h3>Clima De Hoy</h3>
-          <img src={`http:${clima?.current.condition.icon}`} alt="clima" />
-          <p>
-            {" "}
-            Pronostico: <b>{clima?.current.condition.text}</b>
-          </p>
-        </div>
+        <h1>
+          <TiWeatherPartlySunny />
+          Pronostico Climatico
+        </h1>
+
+        <img src={`http:${clima?.current.condition.icon}`} alt="clima" />
         <p>
-          🌡️Temperatura: <b>{clima?.current.temp_c} ℃</b>
+          <GiWizardStaff />
+          Pronostico: {clima?.current.condition.text}
         </p>
 
         <p>
-          {" "}
-          🌡️Temperatura: <b>{clima?.current.temp_f} ℉</b>
-        </p>
-        <p>
-          {" "}
-          ☀️Sensacion: <b>{clima?.current.feelslike_c}</b>
+          <TbTemperature />
+          Temperatura: {clima?.current.temp_c} <TbTemperatureCelsius />
         </p>
 
         <p>
-          💧humedad: <b>{clima?.current.humidity}</b>
+          <TbTemperature />
+          Temperatura: {clima?.current.temp_f} <TbTemperatureFahrenheit />
+          <p> </p>
+          <TiWeatherWindyCloudy />
+          Sensacion: {clima?.current.feelslike_c}
         </p>
-      </div>
 
-      <div className="datos__localizacion">
         <p>
-          🌏︎Pais: <b>{clima?.location.country}</b>
-        </p>
-        <p>
-          🌇Estado: <b>{clima?.location.region}</b>
-        </p>
-        <p>
-          🏙Ciudad: <b>{clima?.location.name}</b>
+          <WiHumidity />
+          humedad: {clima?.current.humidity}
         </p>
       </div>
 
